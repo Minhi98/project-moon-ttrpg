@@ -56,9 +56,9 @@ export class ProjectMoonActorSheet extends ActorSheet {
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
-      this._prepareItems(context);
-    }
+    // if (actorData.type == 'npc') {
+    //   this._prepareItems(context);
+    // }
 
     // Enrich biography info for display
     // Enrichment turns text like `[[/r 1d20]]` into buttons

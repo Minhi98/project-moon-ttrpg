@@ -1,7 +1,6 @@
 // Export Actors
 export {default as ProjectMoonActorBase} from "./base-actor.mjs";
 export {default as ProjectMoonCharacter} from "./actor-character.mjs";
-export {default as ProjectMoonNPC} from "./actor-npc.mjs";
 
 // Export Items
 export {default as ProjectMoonItemBase} from "./base-item.mjs";

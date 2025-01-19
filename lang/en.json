@@ -1,12 +1,12 @@
 {
   "PROJECT_MOON": {
     "Ability": {
-      "Str": { "long": "Fortitude", "abbr": "for" },
-      "Con": { "long": "Prudence", "abbr": "pru" },
-      "Dex": { "long": "Justice", "abbr": "jus" },
-      "Int": { "long": "Charm", "abbr": "chr" },
-      "Wis": { "long": "Insight", "abbr": "ins" },
-      "Cha": { "long": "Temperance", "abbr": "tmp" }
+      "For": { "long": "Fortitude", "abbr": "for" },
+      "Pru": { "long": "Prudence", "abbr": "pru" },
+      "Jus": { "long": "Justice", "abbr": "jus" },
+      "Chm": { "long": "Charm", "abbr": "chm" },
+      "Ins": { "long": "Insight", "abbr": "ins" },
+      "Tmp": { "long": "Temperance", "abbr": "tmp" }
     },
     "SheetLabels": {
       "Actor": "ProjectMoon Actor Sheet",
@@ -29,8 +29,7 @@
 
   "TYPES": {
     "Actor": {
-      "character": "Character",
-      "npc": "NPC"
+      "character": "Character"
     },
     "Item": {
       "item": "Item",

@@ -31,7 +31,7 @@ Hooks.once('init', function () {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
+    formula: '2d6 + @abilities.jus.mod',
     decimals: 2,
   };
 
@@ -42,8 +42,7 @@ Hooks.once('init', function () {
   // for the base actor/item classes - they are included
   // with the Character/NPC as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
-    character: models.ProjectMoonCharacter,
-    npc: models.ProjectMoonNPC
+    character: models.ProjectMoonCharacter
   }
   CONFIG.Item.documentClass = ProjectMoonItem;
   CONFIG.Item.dataModels = {
