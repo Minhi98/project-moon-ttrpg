@@ -12,19 +12,19 @@
       "discord": ".pizzaWizard"
     }
   ],
-  "url": "Replace this with a link to your public repository",
+  "url": "https://github.com/Minhi98/project-moon-ttrpg",
   "license": "LICENSE.txt",
   "readme": "README.md",
-  "bugs": "Replace this with a link to file issues or tickets",
+  "bugs": "https://github.com/Minhi98/project-moon-ttrpg/issues",
   "changelog": "CHANGELOG.md",
   "media": [
     {
       "type": "setup",
-      "url": "systems/project-moon-ttrpg/assets/anvil-impact.png",
-      "thumbnail": "systems/project-moon-ttrpg/assets/anvil-impact.png"
+      "url": "systems/project-moon-ttrpg/assets/pmoon-logo.png",
+      "thumbnail": "systems/project-moon-ttrpg/assets/pmoon-logo.png"
     }
   ],
-  "version": "2.0.0",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": 12,
     "verified": "12.331"
@@ -41,11 +41,11 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
-  "background": "systems/project-moon-ttrpg/assets/anvil-impact.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "manifest": "https://raw.githubusercontent.com/Minhi98/project-moon-ttrpg/main/system.json",
+  "download": "https://github.com/Minhi98/project-moon-ttrpg/archive/main.zip",
+  "background": "systems/project-moon-ttrpg/assets/pmoon-logo.png",
+  "gridDistance": 1,
+  "gridUnits": "SQR",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }
