@@ -1,15 +1,11 @@
 {
   "id": "project-moon-ttrpg",
   "title": "Project Moon TTRPG",
-  "description": "The Project Moon TTRPG system for FoundryVTT!",
+  "description": "The Project Moon TTRPG fan-system for FoundryVTT!",
   "authors": [
     {
-      "name": "Asacolips",
-      "discord": "asacolips"
-    },
-    {
-      "name": "Lee Talman",
-      "discord": ".pizzaWizard"
+      "name": "Minhi",
+      "discord": "minhi"
     }
   ],
   "url": "https://github.com/Minhi98/project-moon-ttrpg",
