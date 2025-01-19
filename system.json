@@ -4,11 +4,15 @@
   "description": "The Project Moon TTRPG system for FoundryVTT!",
   "authors": [
     {
-      "name": "Minhi",
-      "discord": "minhi"
+      "name": "Asacolips",
+      "discord": "asacolips"
+    },
+    {
+      "name": "Lee Talman",
+      "discord": ".pizzaWizard"
     }
   ],
-  "url": "https://github.com/Minhi98/Project-Moon-TTRPG",
+  "url": "Replace this with a link to your public repository",
   "license": "LICENSE.txt",
   "readme": "README.md",
   "bugs": "Replace this with a link to file issues or tickets",

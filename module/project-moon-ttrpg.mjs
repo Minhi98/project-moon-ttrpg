@@ -7,6 +7,8 @@ import { ProjectMoonItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { PROJECT_MOON } from './helpers/config.mjs';
+// Import DataModel classes
+import * as models from './data/_module.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -33,9 +35,22 @@ Hooks.once('init', function () {
     decimals: 2,
   };
 
-  // Define custom Document classes
+  // Define custom Document and DataModel classes
   CONFIG.Actor.documentClass = ProjectMoonActor;
+
+  // Note that you don't need to declare a DataModel
+  // for the base actor/item classes - they are included
+  // with the Character/NPC as part of super.defineSchema()
+  CONFIG.Actor.dataModels = {
+    character: models.ProjectMoonCharacter,
+    npc: models.ProjectMoonNPC
+  }
   CONFIG.Item.documentClass = ProjectMoonItem;
+  CONFIG.Item.dataModels = {
+    item: models.ProjectMoonItem,
+    feature: models.ProjectMoonFeature,
+    spell: models.ProjectMoonSpell
+  }
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
