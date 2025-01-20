@@ -7,12 +7,6 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.attributes = new fields.SchemaField({
-      level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 1 })
-      }),
-    });
-
     // Iterate over ability names and create a new SchemaField for each.
     schema.stats = new fields.SchemaField(Object.keys(CONFIG.PROJECT_MOON.stats).reduce((obj, ability) => {
       obj[ability] = new fields.SchemaField({
@@ -25,7 +19,6 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
   }
 
   prepareDerivedData() {
-    // Loop through ability scores, and add their modifiers to our sheet output.
     for (const key in this.stats) {
       // Handle ability label localization.
       this.stats[key].label = game.i18n.localize(CONFIG.PROJECT_MOON.stats[key]) ?? key;

@@ -42,8 +42,8 @@
   "background": "systems/project-moon-ttrpg/assets/pmoon-logo.png",
   "gridDistance": 1,
   "gridUnits": "SQR",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power",
+  "primaryTokenAttribute": "healthPoints",
+  "secondaryTokenAttribute": "staggerThreshold",
   "initiative":"2d6 + @stats.jus.value",
   "flags": {
     "hotReload": {

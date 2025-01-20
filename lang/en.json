@@ -8,6 +8,22 @@
       "Ins": { "long": "Insight", "abbr": "ins" },
       "Tmp": { "long": "Temperance", "abbr": "tmp" }
     },
+    "Progression": {
+      "XP": "XP",
+      "Level": "Level",
+      "Rank": "Rank"
+    },
+    "DerivedAttributes": {
+      "HealthPoints": { "long": "Health Points", "abbr": "HP" },
+      "StaggerThreshold": { "long": "Stagger Threshold", "abbr": "ST" },
+      "SanityPoints": { "long": "Sanity Points", "abbr": "SP" },
+      "Light": "Light",
+      "AttackModifier": "Attack Modifier",
+      "EvadeModifier": "Evade Modifier",
+      "BlockModifier": "Block Modifier",
+      "EquipmentRankLimit": "Equipment Rank Limit",
+      "ToolSlots": "Tool Slots"
+    },
     "SheetLabels": {
       "Actor": "ProjectMoon Actor Sheet",
       "Item": "ProjectMoon Item Sheet"
