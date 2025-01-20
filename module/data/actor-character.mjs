@@ -58,6 +58,15 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
         value: new fields.NumberField({ ...requiredInteger, initial: 0 })
       })
     });
+    
+    schema.equipmentLimits = new fields.SchemaField({
+      equipmentRankLimit: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
+      }),
+      maxToolSlots: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
+      })
+    });
 
     // equivalent to passing ({initial: ""}) for StringFields
     schema.biography = new fields.StringField({ required: true, blank: true });
@@ -108,6 +117,10 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     this.mods.attack = this.attributes.rank.value;
     this.mods.evade = this.stats.ins.value;
     this.mods.block = this.stats.tmp.value;
+
+    // EQUIPMENT LIMITS
+    this.equipmentLimits.equipmentRankLimit = this.attributes.rank.value + 1;
+    this.equipmentLimits.maxToolSlots = 4;
   }
 
   getRollData() {

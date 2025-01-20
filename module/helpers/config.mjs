@@ -21,9 +21,3 @@ PROJECT_MOON.statAbbreviations = {
   ins: 'PROJECT_MOON.Stats.Ins.abbr',
   tmp: 'PROJECT_MOON.Stats.Tmp.abbr',
 };
-
-// TODO: Derived stat formulas - actually implement these
-PROJECT_MOON.formulas = {
-  equipmentRankLimit: 'rank+1',
-  maxToolSlots: '4'
-};
