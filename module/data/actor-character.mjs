@@ -8,22 +8,22 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     const schema = super.defineSchema();
 
     schema.healthPoints = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 72, min: 0 }),
+      value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       max: new fields.NumberField({ ...requiredInteger, initial: 250 })
     });
 
     schema.staggerThreshold = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 20, min: 0 }),
+      value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       max: new fields.NumberField({ ...requiredInteger, initial: 100 })
     });
 
     schema.sanityPoints = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 15, min: 0 }),
+      value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       max: new fields.NumberField({ ...requiredInteger, initial: 60 })
     });
 
     schema.light = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 3, min: 0 }),
+      value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       max: new fields.NumberField({ ...requiredInteger, initial: 10 })
     });
 
@@ -76,6 +76,7 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
 
   prepareDerivedData() {
     super.prepareDerivedData();
+    
     this._prepareRank();
     this._prepareStats();
     this._prepareDerivedStats();

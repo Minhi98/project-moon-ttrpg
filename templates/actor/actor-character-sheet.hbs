@@ -14,13 +14,18 @@
             <a class="item" data-tab="description">Profile</a>
             <a class="item" data-tab="features">Stats</a>
             <a class="item" data-tab="items">Inventory</a>
-            <a class="item" data-tab="spells">Skills</a>
             <a class="item" data-tab="effects">Effects</a>
           </nav>
         </div>
-      </div>
-      
-      
+      </div>      
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Features Tab --}}
+    <div class="tab features" data-group="primary" data-tab="features">
 
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
@@ -82,16 +87,8 @@
           <label for="system.attributes.rank.value">{{system.attributes.rank.value}}</label>
           </div>
         </div>
-
       </div>
-    </div>
-  </header>
 
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-
-    {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
       <section class="grid grid-3col">
         <aside class="sidebar">
 
@@ -126,11 +123,6 @@
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
        {{> "systems/project-moon-ttrpg/templates/actor/parts/actor-items.hbs"}}
-    </div>
-
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="spells">
-      {{> "systems/project-moon-ttrpg/templates/actor/parts/actor-spells.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}
