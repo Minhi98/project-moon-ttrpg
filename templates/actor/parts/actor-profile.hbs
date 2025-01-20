@@ -1,1 +1,44 @@
-{{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+<h2>Character Art</h2>
+<img class="profile-img" src="{{actor.img}}" data-edit="img" height="100" width="100"/>
+<br>
+
+<h2>Personal Info</h2>
+Full Name
+<input name="system.profile.fullName" type="text" value="{{system.profile.fullName}}" data-dtype="String"/>
+
+Aliases
+<input name="system.profile.aliases" type="text" value="{{system.profile.aliases}}" data-dtype="String"/>
+
+Occupation
+<input name="system.profile.occupation" type="text" value="{{system.profile.occupation}}" data-dtype="String"/>
+
+Age
+<input name="system.profile.age" type="text" value="{{system.profile.age}}" data-dtype="String"/>
+
+Height
+<input name="system.profile.height" type="text" value="{{system.profile.height}}" data-dtype="String"/>
+
+Birthplace
+<input name="system.profile.birthplace" type="text" value="{{system.profile.birthplace}}" data-dtype="String"/>
+
+Residence
+<input name="system.profile.residence" type="text" value="{{system.profile.residence}}" data-dtype="String"/>
+
+<h2>Investigation</h2>
+Description
+{{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}}
+
+Background
+{{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}}
+
+Personality
+{{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}}
+
+Notes
+{{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}}
+
+Relationships
+{{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}}
+
+Notable History
+{{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}}

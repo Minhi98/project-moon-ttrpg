@@ -60,27 +60,38 @@ export class ProjectMoonActorSheet extends ActorSheet {
     //   this._prepareItems(context);
     // }
 
-    // Enrich biography info for display
-    // Enrichment turns text like `[[/r 1d20]]` into buttons
-    // context.enrichedBiography = await TextEditor.enrichHTML(
-    //   this.actor.system.biography,
-    //   {
-    //     // Whether to show secret blocks in the finished html
-    //     secrets: this.document.isOwner,
-    //     // Necessary in v11, can be removed in v12
-    //     async: true,
-    //     // Data to fill in for inline rolls
-    //     rollData: this.actor.getRollData(),
-    //     // Relative UUID resolution
-    //     relativeTo: this.actor,
-    //   }
-    // );
-
     // Prepare active effects
     context.effects = prepareActiveEffectCategories(
       // A generator that returns all effects stored on the actor
       // as well as any items
       this.actor.allApplicableEffects()
+    );
+
+    // Enrich biography info for display
+    // Enrichment turns text like `[[/r 1d20]]` into buttons
+    context.enrichedDescription = await TextEditor.enrichHTML(
+      this.actor.system.profile.description, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
+    );
+    context.enrichedBackground = await TextEditor.enrichHTML(
+      this.actor.system.profile.background, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
+    );
+    context.enrichedPersonality = await TextEditor.enrichHTML(
+      this.actor.system.profile.personality, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
+    );
+    context.enrichedNotes = await TextEditor.enrichHTML(
+      this.actor.system.profile.notes, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
+    );
+    context.enrichedRelationships = await TextEditor.enrichHTML(
+      this.actor.system.profile.relationships, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
+    );
+    context.enrichedNotableHistory = await TextEditor.enrichHTML(
+      this.actor.system.profile.notableHistory, 
+      {secrets: this.document.isOwner, rollData: this.actor.getRollData(), relativeTo: this.actor}
     );
 
     return context;

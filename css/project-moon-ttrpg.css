@@ -365,4 +365,9 @@
   border: none;
 }
 
+/* Separated styles */
+.profile-editor {
+  background: rgb(32, 29, 25);
+}
+
 /*# sourceMappingURL=project-moon-ttrpg.css.map */

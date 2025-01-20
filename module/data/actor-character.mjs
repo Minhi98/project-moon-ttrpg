@@ -57,12 +57,15 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     });
 
     schema.profile = new fields.SchemaField({
-      name: new fields.StringField({ required: false, blank: true }),
+      //text fields
+      fullName: new fields.StringField({ required: false, blank: true }),
+      aliases: new fields.StringField({ required: false, blank: true }),
       occupation: new fields.StringField({ required: false, blank: true }),
       age: new fields.StringField({ required: false, blank: true }),
       height: new fields.StringField({ required: false, blank: true }),
       birthplace: new fields.StringField({ required: false, blank: true }),
       residence: new fields.StringField({ required: false, blank: true }),
+      //enriched fields
       description: new fields.StringField({ required: false, blank: true }),
       background: new fields.StringField({ required: false, blank: true }),
       personality: new fields.StringField({ required: false, blank: true }),

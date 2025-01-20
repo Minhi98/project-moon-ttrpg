@@ -4,7 +4,7 @@
   <header class="sheet-header">
     <div class="header-fields">
       <div class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" height="100" width="100"/>
         <div>
           <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
@@ -118,7 +118,6 @@
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
       {{> "systems/project-moon-ttrpg/templates/actor/parts/actor-profile.hbs"}}
-      {{!-- {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}} --}}
     </div>
 
     {{!-- Owned Items Tab --}}
