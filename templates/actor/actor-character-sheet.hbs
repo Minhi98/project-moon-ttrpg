@@ -68,23 +68,23 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.xp.value" class="resource-label">{{localize 'PROJECT_MOON.Progression.XP'}}</label>
+          <label for="system.progress.xp" class="resource-label">{{localize 'PROJECT_MOON.Progression.XP'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="number" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/>
+          <input type="number" name="system.progress.xp" value="{{system.progress.xp}}" data-dtype="Number"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">{{localize 'PROJECT_MOON.Progression.Level'}}</label>
+          <label for="system.progress.level" class="resource-label">{{localize 'PROJECT_MOON.Progression.Level'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.attributes.level.value">{{system.attributes.level.value}}</label>
+          <label for="system.progress.level">{{system.progress.level}}</label>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.rank.value" class="resource-label">{{localize 'PROJECT_MOON.Progression.Rank'}}</label>
+          <label for="system.progress.rank" class="resource-label">{{localize 'PROJECT_MOON.Progression.Rank'}}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.attributes.rank.value">{{system.attributes.rank.value}}</label>
+          <label for="system.progress.rank">{{system.progress.rank}}</label>
           </div>
         </div>
       </div>
@@ -117,7 +117,8 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      {{> "systems/project-moon-ttrpg/templates/actor/parts/actor-profile.hbs"}}
+      {{!-- {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}} --}}
     </div>
 
     {{!-- Owned Items Tab --}}

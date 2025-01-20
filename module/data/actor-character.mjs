@@ -27,16 +27,10 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
       max: new fields.NumberField({ ...requiredInteger, initial: 10 })
     });
 
-    schema.attributes = new fields.SchemaField({
-      level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      }),
-      xp: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      }),
-      rank: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      })
+    schema.progress = new fields.SchemaField({
+      level: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      xp: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      rank: new fields.NumberField({ ...requiredInteger, initial: 0 })
     });
 
     // Iterate over ability names and create a new SchemaField for each.
@@ -48,32 +42,34 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     }, {}));
     
     schema.mods = new fields.SchemaField({
-      attack: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      }),
-      evade: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      }),
-      block: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      })
+      attack: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      evade: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      block: new fields.NumberField({ ...requiredInteger, initial: 0 })
     });
     
     schema.equipmentLimits = new fields.SchemaField({
-      equipmentRankLimit: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      }),
-      maxToolSlots: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
-      })
+      equipmentRankLimit: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      maxToolSlots: new fields.NumberField({ ...requiredInteger, initial: 0 })
     });
 
-    schema.ahn = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 100000, min: 0 }),
+    schema.inventory = new fields.SchemaField({
+      ahn: new fields.NumberField({ ...requiredInteger, initial: 100000, min: 0 })
     });
 
-    // equivalent to passing ({initial: ""}) for StringFields
-    schema.biography = new fields.StringField({ required: true, blank: true });
+    schema.profile = new fields.SchemaField({
+      name: new fields.StringField({ required: false, blank: true }),
+      occupation: new fields.StringField({ required: false, blank: true }),
+      age: new fields.StringField({ required: false, blank: true }),
+      height: new fields.StringField({ required: false, blank: true }),
+      birthplace: new fields.StringField({ required: false, blank: true }),
+      residence: new fields.StringField({ required: false, blank: true }),
+      description: new fields.StringField({ required: false, blank: true }),
+      background: new fields.StringField({ required: false, blank: true }),
+      personality: new fields.StringField({ required: false, blank: true }),
+      notes: new fields.StringField({ required: false, blank: true }),
+      relationships: new fields.StringField({ required: false, blank: true }),
+      notableHistory: new fields.StringField({ required: false, blank: true })
+    });
 
     return schema;
   }
@@ -87,8 +83,8 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
   }
 
   _prepareRank() {
-    this.attributes.level.value = Math.floor(this.attributes.xp.value / 8);
-    this.attributes.rank.value = Math.floor(this.attributes.level.value / 3) + 1;
+    this.progress.level = Math.floor(this.progress.xp / 8);
+    this.progress.rank = Math.floor(this.progress.level / 3) + 1;
   }
 
   _prepareStats() {
@@ -97,17 +93,17 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
       this.stats[key].label = game.i18n.localize(CONFIG.PROJECT_MOON.stats[key]) ?? key;
 
       // Stat trading restrictions
-      this.stats[key].value = Math.clamp(this.stats[key].value, -1, this.attributes.rank.value + 2);
+      this.stats[key].value = Math.clamp(this.stats[key].value, -1, this.progress.rank + 2);
     }
   }
 
   _prepareDerivedStats() {
     //HEALTH POINTS
-    this.healthPoints.max = Math.floor(72 + (this.stats.for.value * 8) + (this.attributes.rank.value * 8));
+    this.healthPoints.max = Math.floor(72 + (this.stats.for.value * 8) + (this.progress.rank * 8));
     this.healthPoints.value = Math.clamp(this.healthPoints.value, 0, this.healthPoints.max);
 
     //STAGGER THRESHOLD
-    this.staggerThreshold.max = Math.floor(20 + (this.stats.chm.value * 4) + (this.attributes.rank.value * 4));
+    this.staggerThreshold.max = Math.floor(20 + (this.stats.chm.value * 4) + (this.progress.rank * 4));
     this.staggerThreshold.value = Math.clamp(this.staggerThreshold.value, 0, this.staggerThreshold.max);
 
     //SANITY POINTS
@@ -115,16 +111,16 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     this.sanityPoints.value = Math.clamp(this.sanityPoints.value, 0, this.sanityPoints.max);
 
     //LIGHT
-    this.light.max = Math.floor(3 + this.attributes.rank.value);
+    this.light.max = Math.floor(3 + this.progress.rank);
     this.light.value = Math.clamp(this.light.value, 0, this.light.max);
 
     // MODS
-    this.mods.attack = this.attributes.rank.value;
+    this.mods.attack = this.progress.rank;
     this.mods.evade = this.stats.ins.value;
     this.mods.block = this.stats.tmp.value;
 
     // EQUIPMENT LIMITS
-    this.equipmentLimits.equipmentRankLimit = this.attributes.rank.value + 1;
+    this.equipmentLimits.equipmentRankLimit = this.progress.rank + 1;
     this.equipmentLimits.maxToolSlots = 4;
   }
 
@@ -139,7 +135,7 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
       }
     }
 
-    data.lvl = this.attributes.level.value;
+    data.lvl = this.progress.level;
 
     return data
   }
