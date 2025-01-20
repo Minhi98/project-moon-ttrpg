@@ -68,6 +68,10 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
       })
     });
 
+    schema.ahn = new fields.SchemaField({
+      value: new fields.NumberField({ ...requiredInteger, initial: 100000, min: 0 }),
+    });
+
     // equivalent to passing ({initial: ""}) for StringFields
     schema.biography = new fields.StringField({ required: true, blank: true });
 
@@ -76,7 +80,7 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
 
   prepareDerivedData() {
     super.prepareDerivedData();
-    
+
     this._prepareRank();
     this._prepareStats();
     this._prepareDerivedStats();

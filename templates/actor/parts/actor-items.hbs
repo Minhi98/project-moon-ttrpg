@@ -1,3 +1,12 @@
+{{!-- Currency --}}
+<div class="resource flexrow flex-group-center">
+  <label for="system.ahn.value" class="resource-label">{{localize 'PROJECT_MOON.Item.MoneyLabel'}}</label>
+  <div class="resource-content flexrow flex-center flex-between">
+  <input type="number" name="system.ahn.value" value="{{system.ahn.value}}" data-dtype="Number"/>
+  </div>
+</div>
+
+{{!-- Inventory List --}}
 <ol class='items-list'>
   <li class='item flexrow items-header'>
     <div class='item-name'>{{localize 'Name'}}</div>

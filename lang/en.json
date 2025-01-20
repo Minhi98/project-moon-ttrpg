@@ -32,7 +32,8 @@
       "Spell": {
         "SpellLVL": "Level {level} Spells",
         "AddLVL": "Add LVL {level}"
-      }
+      },
+      "MoneyLabel": "Ahn"
     },
     "Effect": {
       "Source": "Source",
