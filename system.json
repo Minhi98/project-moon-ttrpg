@@ -43,5 +43,12 @@
   "gridDistance": 1,
   "gridUnits": "SQR",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power"
+  "secondaryTokenAttribute": "power",
+  "initiative":"2d6 + @stats.jus.value",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "html", "hbs", "json", "mjs"],
+      "paths": ["css", "lang", "templates", "module"]
+    }
+  }
 }

@@ -14,7 +14,7 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     });
 
     // Iterate over ability names and create a new SchemaField for each.
-    schema.abilities = new fields.SchemaField(Object.keys(CONFIG.PROJECT_MOON.abilities).reduce((obj, ability) => {
+    schema.stats = new fields.SchemaField(Object.keys(CONFIG.PROJECT_MOON.stats).reduce((obj, ability) => {
       obj[ability] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       });
@@ -26,11 +26,9 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
 
   prepareDerivedData() {
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (const key in this.abilities) {
-      // The modifier is always equal to the value
-      this.abilities[key].mod = this.abilities[key].value;
+    for (const key in this.stats) {
       // Handle ability label localization.
-      this.abilities[key].label = game.i18n.localize(CONFIG.PROJECT_MOON.abilities[key]) ?? key;
+      this.stats[key].label = game.i18n.localize(CONFIG.PROJECT_MOON.stats[key]) ?? key;
     }
   }
 
@@ -39,8 +37,8 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
 
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
-    if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
+    if (this.stats) {
+      for (let [k,v] of Object.entries(this.stats)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

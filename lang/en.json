@@ -1,6 +1,6 @@
 {
   "PROJECT_MOON": {
-    "Ability": {
+    "Stats": {
       "For": { "long": "Fortitude", "abbr": "for" },
       "Pru": { "long": "Prudence", "abbr": "pru" },
       "Jus": { "long": "Justice", "abbr": "jus" },
