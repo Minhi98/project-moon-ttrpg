@@ -27,11 +27,19 @@ export default class ProjectMoonActorBase extends ProjectMoonDataModel {
       max: new fields.NumberField({ ...requiredInteger, initial: 10 })
     });
 
+    // NOTE: Seems to be required otherwise sheets will break
     schema.attributes = new fields.SchemaField({
       level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 1 })
+        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
+      }),
+      xp: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
+      }),
+      rank: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0 })
       })
     });
+
     schema.biography = new fields.StringField({ required: true, blank: true }); // equivalent to passing ({initial: ""}) for StringFields
 
     return schema;
