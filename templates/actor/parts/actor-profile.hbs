@@ -35,29 +35,29 @@
         <img class="profile-img" src="{{actor.img}}" data-edit="img" height="250px" width="250px"/>
     </section>
 </section>
-<section>
+<section class="biography-editor">
     <h2 class="align-center">Investigation</h2>
-    <section>
+    <section class="flexrow">
         <span>Description</span>
         {{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}}
     </section>
-    <section>
+    <section class="flexrow">
         <span>Background</span>
         {{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}}
     </section>
-    <section>
+    <section class="flexrow">
         <span>Personality</span>
         {{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}}
     </section>
-    <section>
+    <section class="flexrow">
         <span>Notes</span>
         {{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}}
     </section>
-    <section>
+    <section class="flexrow">
         <span>Relationships</span>
         {{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}}
     </section>
-    <section>
+    <section class="flexrow">
         <span>Notable History</span>
         {{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}}
     </section>
