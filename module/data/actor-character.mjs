@@ -30,7 +30,8 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
     schema.progress = new fields.SchemaField({
       level: new fields.NumberField({ ...requiredInteger, initial: 0 }),
       xp: new fields.NumberField({ ...requiredInteger, initial: 0 }),
-      rank: new fields.NumberField({ ...requiredInteger, initial: 0 })
+      rank: new fields.NumberField({ ...requiredInteger, initial: 0 }),
+      rankRoman: new fields.StringField({ required: false, blank: true })
     });
 
     // Iterate over ability names and create a new SchemaField for each.
@@ -88,6 +89,7 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
   _prepareRank() {
     this.progress.level = Math.floor(this.progress.xp / 8);
     this.progress.rank = Math.floor(this.progress.level / 3) + 1;
+    this.progress.rankRoman = CONFIG.PROJECT_MOON.systemRankRomanized(this.progress.rank);
   }
 
   _prepareStats() {
