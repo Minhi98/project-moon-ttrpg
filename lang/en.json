@@ -18,9 +18,9 @@
       "StaggerThreshold": { "long": "Stagger Threshold", "abbr": "ST" },
       "SanityPoints": { "long": "Sanity Points", "abbr": "SP" },
       "Light": "Light",
-      "AttackModifier": "Attack Modifier",
-      "EvadeModifier": "Evade Modifier",
-      "BlockModifier": "Block Modifier",
+      "AttackModifier": { "long": "Attack Modifier", "short": "Attack" },
+      "EvadeModifier": { "long": "Evade Modifier", "short": "Evade" },
+      "BlockModifier": { "long": "Block Modifier", "short": "Block" },
       "EquipmentRankLimit": "Equipment Rank Limit",
       "ToolSlots": "Tool Slots"
     },
