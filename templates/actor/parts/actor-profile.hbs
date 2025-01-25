@@ -1,64 +1,73 @@
-<section class="grid grid-2cols">
+{{!-- TODO: editor handlebar does not show when nested into tags, requires min-height styling to force it to show; using textarea temporarily --}}
+<section class="tab biography" data-group="primary" data-tab="profile">
+    <section class="grid">
+        <section class="profile-personal-info">
+            <h2 class="align-center">{{localize 'PROJECT_MOON.SheetLabels.ProfilePersonalInfoLabel'}}</h2>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileFullNameLabel'}}</span>
+                <input name="system.profile.fullName" type="text" value="{{system.profile.fullName}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileAliasesLabel'}}</span>
+                <input name="system.profile.aliases" type="text" value="{{system.profile.aliases}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileOccupationLabel'}}</span>
+                <input name="system.profile.occupation" type="text" value="{{system.profile.occupation}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileAgeLabel'}}</span>
+                <input name="system.profile.age" type="text" value="{{system.profile.age}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileHeightLabel'}}</span>
+                <input name="system.profile.height" type="text" value="{{system.profile.height}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileBirthplaceLabel'}}</span>
+                <input name="system.profile.birthplace" type="text" value="{{system.profile.birthplace}}" data-dtype="String"/>
+            </section>
+            <section class="flexrow">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileResidenceLabel'}}</span>
+                <input name="system.profile.residence" type="text" value="{{system.profile.residence}}" data-dtype="String"/>
+            </section>
+        </section>
+        <section class="align-center">
+            <h2>{{localize 'PROJECT_MOON.SheetLabels.ProfileCharacterArtLabel'}}</h2>
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" height="250px" width="250px"/>
+        </section>
+    </section>
     <section>
-        <h2 class="align-center">Personal Info</h2>
-        <section class="flexrow">
-            <span>Full Name</span>
-            <input name="system.profile.fullName" type="text" value="{{system.profile.fullName}}" data-dtype="String"/>
+        <h2 class="align-center">{{localize 'PROJECT_MOON.SheetLabels.ProfileInvestigationLabel'}}</h2>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileDescriptionLabel'}}</span>
+            <textarea name="system.profile.description">{{system.profile.description}}</textarea>
+            {{!-- {{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Aliases</span>
-            <input name="system.profile.aliases" type="text" value="{{system.profile.aliases}}" data-dtype="String"/>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileBackgroundLabel'}}</span>
+            <textarea name="system.profile.background">{{system.profile.background}}</textarea>
+            {{!-- {{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Occupation</span>
-            <input name="system.profile.occupation" type="text" value="{{system.profile.occupation}}" data-dtype="String"/>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfilePersonalityLabel'}}</span>
+            <textarea name="system.profile.personality">{{system.profile.personality}}</textarea>
+            {{!-- {{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Age</span>
-            <input name="system.profile.age" type="text" value="{{system.profile.age}}" data-dtype="String"/>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotesLabel'}}</span>
+            <textarea name="system.profile.notes">{{system.profile.notes}}</textarea>
+            {{!-- {{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Height</span>
-            <input name="system.profile.height" type="text" value="{{system.profile.height}}" data-dtype="String"/>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileRelationshipsLabel'}}</span>
+            <textarea name="system.profile.relationships">{{system.profile.relationships}}</textarea>
+            {{!-- {{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Birthplace</span>
-            <input name="system.profile.birthplace" type="text" value="{{system.profile.birthplace}}" data-dtype="String"/>
+        <section class="flexrow biography-editor">
+            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotableHistoryLabel'}}</span>
+            <textarea name="system.profile.notableHistory">{{system.profile.notableHistory}}</textarea>
+            {{!-- {{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}} --}}
         </section>
-        <section class="flexrow">
-            <span>Residence</span>
-            <input name="system.profile.residence" type="text" value="{{system.profile.residence}}" data-dtype="String"/>
-        </section>
-    </section>
-    <section class="align-center">
-        <h2>Character Art</h2>
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" height="250px" width="250px"/>
-    </section>
-</section>
-<section class="biography-editor">
-    <h2 class="align-center">Investigation</h2>
-    <section class="flexrow">
-        <span>Description</span>
-        {{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}}
-    </section>
-    <section class="flexrow">
-        <span>Background</span>
-        {{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}}
-    </section>
-    <section class="flexrow">
-        <span>Personality</span>
-        {{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}}
-    </section>
-    <section class="flexrow">
-        <span>Notes</span>
-        {{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}}
-    </section>
-    <section class="flexrow">
-        <span>Relationships</span>
-        {{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}}
-    </section>
-    <section class="flexrow">
-        <span>Notable History</span>
-        {{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}}
     </section>
 </section>

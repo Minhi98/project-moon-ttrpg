@@ -1,0 +1,18 @@
+.pmoon-logo {
+    border:none;
+}
+
+.biography-editor {
+    padding-bottom: 0.5em;
+    
+    // TODO: Currently editor handlebars hide themselves when nested under other elements
+    .editor {
+      min-height: 4em;
+    }
+}
+
+.profile-personal-info {
+    section {
+        padding-bottom: 0.5em;
+    }
+}

@@ -26,7 +26,23 @@
     },
     "SheetLabels": {
       "Actor": "ProjectMoon Actor Sheet",
-      "Item": "ProjectMoon Item Sheet"
+      "Item": "ProjectMoon Item Sheet",
+      "ProfilePersonalInfoLabel": "Personal Info",
+      "ProfileInvestigationLabel": "Investigation",
+      "ProfileCharacterArtLabel": "Character Art",
+      "ProfileFullNameLabel": "Full Name",
+      "ProfileAliasesLabel": "Aliases",
+      "ProfileOccupationLabel": "Occupation",
+      "ProfileAgeLabel": "Age",
+      "ProfileHeightLabel": "Height",
+      "ProfileBirthplaceLabel": "Birthplace",
+      "ProfileResidenceLabel": "Residence",
+      "ProfileDescriptionLabel": "Description",
+      "ProfileBackgroundLabel": "Background",
+      "ProfilePersonalityLabel": "Personality",
+      "ProfileNotesLabel": "Notes",
+      "ProfileRelationshipsLabel": "Relationships",
+      "ProfileNotableHistoryLabel": "Notable History"
     },
     "Item": {
       "Spell": {

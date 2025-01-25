@@ -30,6 +30,8 @@
       // width: 100%;
       height: 100%;
       margin: 0;
+      background: none;
+      border:none;
     }
   }
 }
@@ -51,11 +53,5 @@
 
   .tox-edit-area {
     padding: 0 8px;
-  }
-}
-
-.biography-editor {
-  .editor {
-    min-height: 12rem;
   }
 }

@@ -232,6 +232,8 @@
 .project-moon-ttrpg .sheet-header h1.charname input {
   height: 100%;
   margin: 0;
+  background: none;
+  border: none;
 }
 .project-moon-ttrpg .sheet-tabs {
   flex: 0;
@@ -246,9 +248,6 @@
 }
 .project-moon-ttrpg .tox .tox-edit-area {
   padding: 0 8px;
-}
-.project-moon-ttrpg .biography-editor .editor {
-  min-height: 12rem;
 }
 .project-moon-ttrpg .resource-label {
   font-weight: bold;
@@ -367,5 +366,19 @@
 }
 
 /* Separated styles */
+.pmoon-logo {
+  border: none;
+}
+
+.biography-editor {
+  padding-bottom: 0.5em;
+}
+.biography-editor .editor {
+  min-height: 4em;
+}
+
+.profile-personal-info section {
+  padding-bottom: 0.5em;
+}
 
 /*# sourceMappingURL=project-moon-ttrpg.css.map */
