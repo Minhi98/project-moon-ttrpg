@@ -385,41 +385,47 @@
   padding-bottom: 0.5em;
 }
 
-.tab.stats.active input {
+.tab.stats input {
   padding: 0px;
 }
-.tab.stats.active .resources .flexrow .stats-right-column {
+.tab.stats .resources .flexrow .stats-right-column {
   flex: 1;
   padding-left: 1%;
 }
-.tab.stats.active .resources .flexrow div {
+.tab.stats .resources .flexrow div {
   padding-bottom: 1px;
 }
-.tab.stats.active .resources .flexrow .stats-left-column {
+.tab.stats .resources .flexrow .stats-left-column {
   flex: 2;
 }
-.tab.stats.active .resources .flexrow .stats-left-column .profile-img {
+.tab.stats .resources .flexrow .stats-left-column .profile-img {
   width: 95%;
 }
 
-.tab.biography.active .basic-info .profile-personal-info span {
+.tab.biography .basic-info .profile-personal-info span {
   flex: 1;
 }
-.tab.biography.active .basic-info .profile-personal-info input {
+.tab.biography .basic-info .profile-personal-info input {
   flex: 2.5;
 }
-.tab.biography.active .basic-info .profile-personal-info-art {
+.tab.biography .basic-info .profile-personal-info-art {
   padding-left: 1%;
 }
-.tab.biography.active .basic-info .profile-personal-info-art .profile-img {
+.tab.biography .basic-info .profile-personal-info-art .profile-img {
   height: 85%;
   width: 95%;
 }
-.tab.biography.active .profile-investigation .profile-investigation-editors span {
+.tab.biography .profile-investigation .profile-investigation-editors span {
   flex: 1;
 }
-.tab.biography.active .profile-investigation .profile-investigation-editors textarea {
+.tab.biography .profile-investigation .profile-investigation-editors textarea {
   flex: 4;
+}
+
+.inventory-ahn-label {
+  text-align: right;
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 /*# sourceMappingURL=project-moon-ttrpg.css.map */

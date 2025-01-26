@@ -9,6 +9,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/project-moon-ttrpg/templates/actor/parts/actor-stats.hbs',
     'systems/project-moon-ttrpg/templates/actor/parts/actor-features.hbs',
     'systems/project-moon-ttrpg/templates/actor/parts/actor-items.hbs',
+    'systems/project-moon-ttrpg/templates/actor/parts/item-line.hbs',
     'systems/project-moon-ttrpg/templates/actor/parts/actor-effects.hbs',
     'systems/project-moon-ttrpg/templates/actor/parts/actor-profile.hbs',
     // Item partials
