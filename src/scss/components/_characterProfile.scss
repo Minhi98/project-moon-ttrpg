@@ -24,15 +24,28 @@
 
 
 .tab.stats.active {
+
+    input {
+        padding: 0px;
+    }
+
     .resources {
         .flexrow {
             .stats-right-column {
                 flex: 1;
                 padding-left: 1%;
             }
+
+            div {
+                padding-bottom: 1px;
+            }
         
             .stats-left-column {
-                    flex: 2;
+                flex: 2;
+                
+                .profile-img {
+                    width: 95%;
+                }
             }
         }
     }

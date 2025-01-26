@@ -385,12 +385,21 @@
   padding-bottom: 0.5em;
 }
 
+.tab.stats.active input {
+  padding: 0px;
+}
 .tab.stats.active .resources .flexrow .stats-right-column {
   flex: 1;
   padding-left: 1%;
 }
+.tab.stats.active .resources .flexrow div {
+  padding-bottom: 1px;
+}
 .tab.stats.active .resources .flexrow .stats-left-column {
   flex: 2;
+}
+.tab.stats.active .resources .flexrow .stats-left-column .profile-img {
+  width: 95%;
 }
 
 .tab.biography.active .basic-info .profile-personal-info span {

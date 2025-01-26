@@ -31,7 +31,7 @@
 
             <div class="flexrow">
               <div>
-                <img class="profile-img" src="{{actor.img}}" data-edit="img" height="100%" width="95%"/>
+                <img class="profile-img" src="{{actor.img}}" data-edit="img"/>
               </div>
               <div>
 
@@ -100,7 +100,9 @@
             <div class="stats grid grid-3col">
                   {{#each system.stats as |stat key|}}
                   <div class="stat flexcol flex-group-center">
-                    <img src="systems/project-moon-ttrpg/assets/stats/{{key}}.png" class="stat-imgs" />
+                    
+                    {{!-- <img src="systems/project-moon-ttrpg/assets/stats/{{key}}.png" class="stat-imgs rollable" data-roll="2d6+@stats.{{key}}.value" data-label="{{localize (lookup @root.config.stats key)}}" /> --}}
+
                     <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@stats.{{key}}.value" data-label="{{localize (lookup @root.config.stats key)}}">{{localize (lookup @root.config.stats key)}}</label>
                     <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
                   </div>
