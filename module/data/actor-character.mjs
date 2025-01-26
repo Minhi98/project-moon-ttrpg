@@ -12,6 +12,10 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
       max: new fields.NumberField({ ...requiredInteger, initial: 250 })
     });
 
+    schema.tempHealthPoints = new fields.SchemaField({
+      value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+    });
+
     schema.staggerThreshold = new fields.SchemaField({
       value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
       max: new fields.NumberField({ ...requiredInteger, initial: 100 })
@@ -103,9 +107,10 @@ export default class ProjectMoonCharacter extends ProjectMoonActorBase {
   }
 
   _prepareDerivedStats() {
-    //HEALTH POINTS
+    //HEALTH POINTS & TEMPORARY HP
     this.healthPoints.max = Math.floor(72 + (this.stats.for.value * 8) + (this.progress.rank * 8));
     this.healthPoints.value = Math.clamp(this.healthPoints.value, 0, this.healthPoints.max);
+    this.tempHealthPoints.value = Math.max(this.tempHealthPoints.value, 0);
 
     //STAGGER THRESHOLD
     this.staggerThreshold.max = Math.floor(20 + (this.stats.chm.value * 4) + (this.progress.rank * 4));

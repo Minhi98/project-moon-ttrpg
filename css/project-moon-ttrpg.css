@@ -370,6 +370,10 @@
   border: none;
 }
 
+.stat-imgs {
+  height: 80%;
+}
+
 .biography-editor {
   padding-bottom: 0.5em;
 }
@@ -381,8 +385,32 @@
   padding-bottom: 0.5em;
 }
 
-.stats-right-column {
-  padding-left: 2%;
+.tab.stats.active .resources .flexrow .stats-right-column {
+  flex: 1;
+  padding-left: 1%;
+}
+.tab.stats.active .resources .flexrow .stats-left-column {
+  flex: 2;
+}
+
+.tab.biography.active .basic-info .profile-personal-info span {
+  flex: 1;
+}
+.tab.biography.active .basic-info .profile-personal-info input {
+  flex: 2.5;
+}
+.tab.biography.active .basic-info .profile-personal-info-art {
+  padding-left: 1%;
+}
+.tab.biography.active .basic-info .profile-personal-info-art .profile-img {
+  height: 85%;
+  width: 95%;
+}
+.tab.biography.active .profile-investigation .profile-investigation-editors span {
+  flex: 1;
+}
+.tab.biography.active .profile-investigation .profile-investigation-editors textarea {
+  flex: 4;
 }
 
 /*# sourceMappingURL=project-moon-ttrpg.css.map */

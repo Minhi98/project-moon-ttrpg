@@ -14,9 +14,10 @@
       "Rank": "Rank"
     },
     "DerivedAttributes": {
-      "HealthPoints": { "long": "Health Points", "abbr": "HP" },
-      "StaggerThreshold": { "long": "Stagger Threshold", "abbr": "ST" },
-      "SanityPoints": { "long": "Sanity Points", "abbr": "SP" },
+      "HealthPoints": { "long": "Health Points", "sheetShort": "Health", "abbr": "HP" },
+      "TempHealthPoints": { "long": "Temporary Health Points", "sheetShort": "Temp", "abbr": "Temp. HP" },
+      "StaggerThreshold": { "long": "Stagger Threshold", "sheetShort": "Stagger", "abbr": "ST" },
+      "SanityPoints": { "long": "Sanity Points", "sheetShort": "Sanity", "abbr": "SP" },
       "Light": "Light",
       "AttackModifier": { "long": "Attack Modifier", "short": "Attack" },
       "EvadeModifier": { "long": "Evade Modifier", "short": "Evade" },
@@ -43,6 +44,9 @@
       "ProfileNotesLabel": "Notes",
       "ProfileRelationshipsLabel": "Relationships",
       "ProfileNotableHistoryLabel": "Notable History"
+    },
+    "SheetRolls": {
+      "SanityPanicRoll": {"ChatCardMessage": "Panic Behaviour: Fight, Flight, Fawn or Freeze", "RollableTitle": "Roll Panic Behaviour"}
     },
     "Item": {
       "Spell": {

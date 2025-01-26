@@ -2,8 +2,8 @@
 
     <div class="resources">
       
-      <div class="flexrow">
-        <div>
+      <div class="flexrow ">
+        <div class="stats-left-column">
             <div class="flexrow">
               <div class="resource flex-group-center flexrow">
                 <label for="system.progress.rankRoman" class="resource-label">{{localize 'PROJECT_MOON.Progression.Rank'}}</label>
@@ -34,29 +34,50 @@
                 <img class="profile-img" src="{{actor.img}}" data-edit="img" height="100%" width="95%"/>
               </div>
               <div>
-                <div class="flex-group-center">
-                  <label for="system.healthPoints.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.HealthPoints.long'}}</label>
-                  <div class="resource-content flexrow flex-center flex-between">
-                  <input type="number" name="system.healthPoints.value" value="{{system.healthPoints.value}}" data-dtype="Number"/>
-                  <label for="system.healthPoints.max"> / {{system.healthPoints.max}}</label>
+
+                <div class="flexrow flex-group-center">
+                  <label for="system.healthPoints.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.HealthPoints.sheetShort'}}</label>
+                  <div class="resource-content flexcol flex-center flex-between">
+                    <div class="flexrow">
+                      <label for="system.tempHealthPoints.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.TempHealthPoints.sheetShort'}}</label>
+                      <input type="number" name="system.tempHealthPoints.value" value="{{system.tempHealthPoints.value}}" data-dtype="Number"/>
+                    </div>
+                    <div class="flexrow">
+                      <input type="number" name="system.healthPoints.value" value="{{system.healthPoints.value}}" data-dtype="Number"/>
+                      <span>/ {{system.healthPoints.max}}</span>
+                    </div>
                   </div>
                 </div>
 
-                <div class="flex-group-center">
-                  <label for="system.staggerThreshold.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.StaggerThreshold.long'}}</label>
+                <div class="flexrow flex-group-center">
+                  <label for="system.staggerThreshold.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.StaggerThreshold.sheetShort'}}</label>
                   <div class="resource-content flexrow flex-center flex-between">
-                  <input type="number" name="system.staggerThreshold.value" value="{{system.staggerThreshold.value}}" data-dtype="Number"/>
-                  <label for="system.staggerThreshold.max"> / {{system.staggerThreshold.max}}</label>
+                    <input type="number" name="system.staggerThreshold.value" value="{{system.staggerThreshold.value}}" data-dtype="Number"/>
+                    <span>/ {{system.staggerThreshold.max}}</span>
                   </div>
                 </div>
 
-                <div class="flex-group-center">
-                  <label for="system.sanityPoints.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.SanityPoints.long'}}</label>
+                <div class="flexrow flex-group-center">
+                  <label for="system.sanityPoints.value" class="resource-label rollable" 
+                    data-roll="1d4" data-label="{{localize 'PROJECT_MOON.SheetRolls.SanityPanicRoll.ChatCardMessage'}}" 
+                    title="{{localize 'PROJECT_MOON.SheetRolls.SanityPanicRoll.RollableTitle'}}">
+                      {{localize 'PROJECT_MOON.DerivedAttributes.SanityPoints.sheetShort'}}
+                  </label>
                   <div class="resource-content flexrow flex-center flex-between">
-                  <input type="number" name="system.sanityPoints.value" value="{{system.sanityPoints.value}}" data-dtype="Number"/>
-                  <label for="system.sanityPoints.max"> / {{system.sanityPoints.max}}</label>
+                    <input type="number" name="system.sanityPoints.value" value="{{system.sanityPoints.value}}" data-dtype="Number"/>
+                    <span>/ {{system.sanityPoints.max}}</span>
                   </div>
                 </div>
+
+                <div class="flexrow flex-group-center">
+                  <label for="system.light.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.Light'}}</label>
+                  <div class="resource-content flexrow flex-center flex-between">
+                  <input type="number" name="system.light.value" value="{{system.light.value}}" data-dtype="Number"/>
+                  <label for="system.light.max"> / {{system.light.max}}</label>
+                  </div>
+                </div>
+
+                <hr>
 
                 <div class="flexrow">
                   <div class="flexcol flex-group-center">
@@ -79,6 +100,7 @@
             <div class="stats grid grid-3col">
                   {{#each system.stats as |stat key|}}
                   <div class="stat flexcol flex-group-center">
+                    <img src="systems/project-moon-ttrpg/assets/stats/{{key}}.png" class="stat-imgs" />
                     <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="2d6+@stats.{{key}}.value" data-label="{{localize (lookup @root.config.stats key)}}">{{localize (lookup @root.config.stats key)}}</label>
                     <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
                   </div>
@@ -88,13 +110,7 @@
         </div>
         <div class="stats-right-column">
 
-          <div class="resource flex-group-center">
-            <label for="system.light.value" class="resource-label">{{localize 'PROJECT_MOON.DerivedAttributes.Light'}}</label>
-            <div class="resource-content flexrow flex-center flex-between">
-            <input type="number" name="system.light.value" value="{{system.light.value}}" data-dtype="Number"/>
-            <label for="system.light.max"> / {{system.light.max}}</label>
-            </div>
-          </div>
+          TODO: 2nd column
 
         </div>
       </div>

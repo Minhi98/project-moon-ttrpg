@@ -1,6 +1,6 @@
 {{!-- TODO: editor handlebar does not show when nested into tags, requires min-height styling to force it to show; using textarea temporarily --}}
 <section class="tab biography" data-group="primary" data-tab="profile">
-    <section class="grid">
+    <section class="flexrow basic-info">
         <section class="profile-personal-info">
             <h2 class="align-center">{{localize 'PROJECT_MOON.SheetLabels.ProfilePersonalInfoLabel'}}</h2>
             <section class="flexrow">
@@ -32,42 +32,45 @@
                 <input name="system.profile.residence" type="text" value="{{system.profile.residence}}" data-dtype="String"/>
             </section>
         </section>
-        <section class="align-center">
+        <section class="align-center profile-personal-info-art">
             <h2>{{localize 'PROJECT_MOON.SheetLabels.ProfileCharacterArtLabel'}}</h2>
-            <img class="profile-img" src="{{actor.img}}" data-edit="img" height="250px" width="250px"/>
+            <img class="profile-img" src="{{actor.img}}" data-edit="img"/>
         </section>
     </section>
-    <section>
+    <section class="profile-investigation">
         <h2 class="align-center">{{localize 'PROJECT_MOON.SheetLabels.ProfileInvestigationLabel'}}</h2>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileDescriptionLabel'}}</span>
-            <textarea name="system.profile.description">{{system.profile.description}}</textarea>
-            {{!-- {{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileBackgroundLabel'}}</span>
-            <textarea name="system.profile.background">{{system.profile.background}}</textarea>
-            {{!-- {{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfilePersonalityLabel'}}</span>
-            <textarea name="system.profile.personality">{{system.profile.personality}}</textarea>
-            {{!-- {{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotesLabel'}}</span>
-            <textarea name="system.profile.notes">{{system.profile.notes}}</textarea>
-            {{!-- {{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileRelationshipsLabel'}}</span>
-            <textarea name="system.profile.relationships">{{system.profile.relationships}}</textarea>
-            {{!-- {{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
-        <section class="flexrow biography-editor">
-            <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotableHistoryLabel'}}</span>
-            <textarea name="system.profile.notableHistory">{{system.profile.notableHistory}}</textarea>
-            {{!-- {{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}} --}}
-        </section>
+        <div class="profile-investigation-editors">
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileDescriptionLabel'}}</span>
+                <textarea name="system.profile.description">{{system.profile.description}}</textarea>
+                {{!-- {{editor enrichedDescription target="system.profile.description" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileBackgroundLabel'}}</span>
+                <textarea name="system.profile.background">{{system.profile.background}}</textarea>
+                {{!-- {{editor enrichedBackground target="system.profile.background" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfilePersonalityLabel'}}</span>
+                <textarea name="system.profile.personality">{{system.profile.personality}}</textarea>
+                {{!-- {{editor enrichedPersonality target="system.profile.personality" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotesLabel'}}</span>
+                <textarea name="system.profile.notes">{{system.profile.notes}}</textarea>
+                {{!-- {{editor enrichedNotes target="system.profile.notes" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileRelationshipsLabel'}}</span>
+                <textarea name="system.profile.relationships">{{system.profile.relationships}}</textarea>
+                {{!-- {{editor enrichedRelationships target="system.profile.relationships" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+            <section class="flexrow biography-editor">
+                <span>{{localize 'PROJECT_MOON.SheetLabels.ProfileNotableHistoryLabel'}}</span>
+                <textarea name="system.profile.notableHistory">{{system.profile.notableHistory}}</textarea>
+                {{!-- {{editor enrichedNotableHistory target="system.profile.notableHistory" engine="prosemirror" button=true editable=editable}} --}}
+            </section>
+        </div>
+    
     </section>
 </section>
