@@ -10,6 +10,14 @@ import { PROJECT_MOON } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 
+/**
+ * Configure system status effects
+ */
+
+function _configureStatusEffects() {
+  //TODO: setup project moon status effects
+}
+
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
