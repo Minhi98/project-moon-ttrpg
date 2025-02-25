@@ -1,3 +1,7 @@
+// Document Classes
+import { DocumentActor } from './documents/Actor.mjs';
+import { DocumentItem } from './documents/Item.mjs';
+
 /**
  * Initialisation Hook
  */
@@ -5,7 +9,9 @@ Hooks.once("init", function() {
     
     // Utility classes in the global game object 
     game.projectmoonttrpg = {
-        rollItemMacro
+      DocumentActor,
+      DocumentItem,
+      rollItemMacro
     };
 
     CONFIG.PROJECT_MOON = PROJECT_MOON;
@@ -53,15 +59,15 @@ Handlebars.registerHelper('toLowerCase', function (str) {
  * Define system document classes and data models
  */
 function _configDataModels() {
-    // TODO: documentClass
-    // CONFIG.Actor.documentClass = ProjectMoonActor;
     
+    Config.Actor.documentClass = DocumentActor;
+
     // TODO: DataModels
     // CONFIG.Actor.dataModels = {
     //     character: models.ProjectMoonCharacter
     // }
 
-    // CONFIG.Item.documentClass = ProjectMoonItem;
+    CONFIG.Item.documentClass = DocumentItem;
 
     // CONFIG.Item.dataModels = {
     //     weapon: models.ProjectMoonWeapon,
