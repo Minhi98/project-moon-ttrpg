@@ -25,7 +25,7 @@
     "minimum": 12,
     "verified": "12.331"
   },
-  "esmodules": ["module/project-moon-ttrpg.mjs"],
+  "esmodules": ["src/project-moon-ttrpg.mjs"],
   "styles": ["css/project-moon-ttrpg.css"],
   "languages": [
     {
@@ -44,7 +44,6 @@
   "gridUnits": "SQR",
   "primaryTokenAttribute": "healthPoints",
   "secondaryTokenAttribute": "staggerThreshold",
-  "initiative":"2d6 + @stats.jus.value",
   "flags": {
     "hotReload": {
       "extensions": ["css", "html", "hbs", "json", "mjs"],
